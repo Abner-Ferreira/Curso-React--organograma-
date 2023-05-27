@@ -10,12 +10,12 @@ function App() {
 
   const times = [
     {
-      nome: 'Programação',
+      nome: 'Plataformas',
       corPrimaria: '#57C278',
       corSecundaria: '#D9F7E9',
     },
     {
-      nome: 'Front-End',
+      nome: 'CX',
       corPrimaria: '#82CFFA',
       corSecundaria: '#E8F8FF'
     },
@@ -53,18 +53,20 @@ function App() {
   }
 
 
+  
+
   return (
     <div className="App">
       <Banner />
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
-      {times.map(time => <Time 
-        key={time.nome} 
-        nome={time.nome} 
-        corPrimaria={time.corPrimaria} 
-        corSecundaria={time.corSecundaria} 
+      {times.map((time, i) => <Time
+        key={time.nome}
+        nome={time.nome}
+        corPrimaria={time.corPrimaria}
+        corSecundaria={time.corSecundaria}
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}
-      <Rodape/>
+      <Rodape />
     </div>
   );
 }

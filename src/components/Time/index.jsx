@@ -1,5 +1,6 @@
 import React from 'react';
 import Colaborador from '../Colaborador';
+
 import './Time.css'
 
 const Time = (props) => {
@@ -10,6 +11,7 @@ const Time = (props) => {
             <div className='colaboradores'>
             {props.colaboradores.map(colaborador => <Colaborador corDeFundo={props.corPrimaria} key={colaborador.nome} nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} />)}
             </div>
+            
         </section>
         : ''
     )
